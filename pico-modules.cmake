@@ -1,8 +1,8 @@
 # ====================================================================================
-# Usage Examples:
-
-# Simple module (equivalent to your original)
-#add_simple_pico_module(i2c_module test.cppm pico_stdlib hardware_i2c)
+# Usage
+#
+# Simple module
+# add_simple_pico_module(i2c_module my_module.cppm pico_stdlib hardware_i2c)
 #
 # More complex module with multiple files and custom settings
 # add_pico_module(spi_module
@@ -111,7 +111,7 @@ function(add_simple_pico_module MODULE_NAME MODULE_FILE)
     )
 endfunction()
 
-# Function to create an interface target that links to all modules
+# Helper function to simplify linkage under dynamic naming
 function(create_all_modules_target TARGET_NAME)
     get_property(all_modules GLOBAL PROPERTY PICO_MODULES_LIST)
     
@@ -124,7 +124,7 @@ function(create_all_modules_target TARGET_NAME)
     endif()
 endfunction()
 
-# Alternative: Get the list of modules as a variable
+# Helper function to retrieve list of modules
 function(get_all_modules_list OUTPUT_VAR)
     get_property(modules_list GLOBAL PROPERTY PICO_MODULES_LIST)
     set(${OUTPUT_VAR} "${modules_list}" PARENT_SCOPE)
