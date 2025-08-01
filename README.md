@@ -1,6 +1,8 @@
 # Raspberry Pi Pico -- Modules
 
-A simple cmake script to streamline adding modules into your Pi Pico projects. Don't forget to enable module support in CMake:
+A simple cmake script to streamline adding modules into your Pi Pico projects. I am not in any way associated with Raspberry Pi - but figured someone else might find this helpful.
+
+Don't forget to enable module support:
 ```
 set(CMAKE_CXX_STANDARD 23)
 add_compile_options($<$<COMPILE_LANGUAGE:CXX>:-fmodules-ts>)
